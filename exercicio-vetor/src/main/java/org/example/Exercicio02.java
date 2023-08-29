@@ -12,7 +12,7 @@ public class Exercicio02 {
         for (int i = 0; i < 10; i++){
             System.out.println("Digite um número inteiro:");
             conjunto[i] = leitorInteger.nextInt();
-            soma = conjunto[i];
+            soma += conjunto[i];
         }
         Integer media = (soma / conjunto.length);
 
@@ -25,5 +25,15 @@ public class Exercicio02 {
             }
         }
 
+
+        //DESAFIO
+        System.out.println("Exibindo a quantidade de valores impares: ");
+        int somaImpares = 0;
+        for (int i : conjunto){
+            if((i % 2) != 0){
+                somaImpares++;
+            }
+        }
+        System.out.println(somaImpares);
     }
 }

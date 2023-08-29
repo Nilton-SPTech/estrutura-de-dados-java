@@ -17,14 +17,12 @@ public class Exercicio04 {
         Integer numeroDigitado = leitorInteger.nextInt();
 
         int qntVezes = 0;
-        for (int i :conjunto) {
+        for (int i : conjunto) {
             if(numeroDigitado.equals(i)){
                 qntVezes++;
             }
         }
 
-        System.out.println(String.format(
-                "O número %d ocorre %d vezes",
-                numeroDigitado, qntVezes));
+        System.out.println(String.format("O número %d ocorre %d vezes", numeroDigitado, qntVezes));
     }
 }

@@ -13,7 +13,6 @@ public class Exercicio03 {
             conjunto[i] = leitor.next();
         }
 
-
         System.out.println("Pesquise por uma palavra digitada:");
         String pesquisa = leitor.nextLine();
 
@@ -28,5 +27,17 @@ public class Exercicio03 {
 
         System.out.println(isPesqsuisa ? "Nome encontrado no índice " + posicao + "."
                 : "Nome não encontrado.");
+
+
+        // DESAFIO
+        String[] diaSemana = new String[]
+            {"Segunda", "Terça","Quarta","Quinta","Sexta", "Sábado", "Domingo"};
+
+        int numeroDigitado = 0;
+        while(numeroDigitado < 1 || numeroDigitado > 7){
+            System.out.println("Digite um número de 1 a 7:");
+                numeroDigitado = leitor.nextInt();
+        }
+        System.out.println("Dia digitado: " + diaSemana[numeroDigitado -1]);
     }
 }

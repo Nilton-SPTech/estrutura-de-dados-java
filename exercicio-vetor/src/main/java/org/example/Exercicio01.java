@@ -19,8 +19,16 @@ public class Exercicio01 {
         }
 
         System.out.println("Você inseriu os seguintes números: \n");
-        for (int i = conjunto.length; i > 0; i--){
+        for (int i = (conjunto.length - 1); i >= 0; i--){
             System.out.print("[" + conjunto[i] + "]");
         }
+
+        // DESAFIO 01
+        System.out.println("Soma dos valores: ");
+        int soma = 0;
+        for (int i: conjunto) {
+            soma += i;
+        }
+        System.out.println(soma);
     }
 }
