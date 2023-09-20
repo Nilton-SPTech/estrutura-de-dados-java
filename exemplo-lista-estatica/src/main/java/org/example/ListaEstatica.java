@@ -11,24 +11,34 @@ public class ListaEstatica {
         nroElem = 0;
     }
 
+    public void aumentaVetor(int v[]){
+        this.vetor = new int[nroElem + 10];
+        for(int i = 0; i < v.length; i++){
+            this.vetor[i] = v[i];
+        }
+    }
     //1
     public void adiciona(int valor){
 
-        if(nroElem == vetor.length -1){
-            System.out.println("Lista cheia");
-            throw new IllegalStateException("Lista Cheia!");
+        if(nroElem >= this.vetor.length){
+            aumentaVetor(this.vetor);
         }
-        else{
-            vetor[nroElem] = valor;
-            nroElem++;
-        }
+
+        vetor[nroElem] = valor;
+        nroElem++;
+
     }
 
 
     //2
     public void exibe(){
-        for (int i = 0; i < nroElem; i++){
-            System.out.println(vetor[i]);
+        if(nroElem == 0){
+            System.out.println("\nLista está vazia");
+        }
+        else{
+            for (int i = 0; i < nroElem; i++){
+                System.out.println(vetor[i]);
+            }
         }
     }
 
@@ -59,5 +69,45 @@ public class ListaEstatica {
     //5
     public boolean removeElemento(int elemento){
         return removerPeloIndice(busca(elemento));
+    }
+
+
+    // Substitui
+    public boolean substitui(int valorAn, int valorNv){
+        int indice = busca(valorAn);
+        if(indice == -1){
+            return false;
+        }
+
+        adiciona(valorAn);
+        vetor[indice] = valorNv;
+
+        return true;
+    }
+
+    //Conta ocorrências
+    public int contaOcorrencia(int valor){
+        int count = 0;
+
+        for (int i = 0; i < nroElem; i++){
+            if (vetor[i] == valor){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    //Adiciona no inicio
+    public boolean adicionaNoInicio(int valor){
+        if(nroElem == this.vetor.length){
+            aumentaVetor(this.vetor);
+        }
+
+        for (int i = vetor.length -1; i > 0; i--){
+            vetor[i] = vetor[i - 1];
+        }
+
+        vetor[0] = valor;
+        return true;
     }
 }
